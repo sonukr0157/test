@@ -25,4 +25,6 @@ public class CourseController {
         CourseStudentDTO courseStudentDTO = courseService.getCourseWithStudentEnrollmentIds(courseId);
         return ResponseEntity.ok(courseStudentDTO);
     }
+
+
 }

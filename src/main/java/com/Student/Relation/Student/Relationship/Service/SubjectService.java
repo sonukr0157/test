@@ -71,17 +71,7 @@ public class SubjectService {
 
 
 
-    // Update an existing subject
-    public Subject updateSubject(Long id, Subject subjectDetails) {
-        Optional<Subject> subject = subjectRepository.findById(id);
-        if (subject.isPresent()) {
-            Subject existingSubject = subject.get();
-            existingSubject.setSubjectName(subjectDetails.getSubjectName());
-            existingSubject.setSubjectId(subjectDetails.getSubjectId());
-            return subjectRepository.save(existingSubject);
-        }
-        return null;
-    }
+
 
     // Method to get subject details and course names by subjectId
     public SubjectCourseDTO getSubjectDetailsAndCourses(String subjectId) {
@@ -99,8 +89,4 @@ public class SubjectService {
         return null;  // Return null if subject is not found
     }
 
-    // Delete a subject by id
-    public void deleteSubject(Long id) {
-        subjectRepository.deleteById(id);
-    }
 }

@@ -15,7 +15,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/subjects")
 public class SubjectController {
-dfghjkkl
     @Autowired
     private SubjectService subjectService;
 
@@ -49,18 +48,4 @@ dfghjkkl
         return ResponseEntity.status(HttpStatus.CREATED).body(savedSubject);
     }
 
-
-    // Update an existing subject
-    @PutMapping("/{id}")
-    public ResponseEntity<Subject> updateSubject(@PathVariable Long id, @RequestBody Subject subjectDetails) {
-        Subject updatedSubject = subjectService.updateSubject(id, subjectDetails);
-        return updatedSubject != null ? ResponseEntity.ok(updatedSubject) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-    }
-
-    // Delete a subject
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteSubject(@PathVariable Long id) {
-        subjectService.deleteSubject(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-    }
 }
